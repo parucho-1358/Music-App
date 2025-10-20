@@ -9,3 +9,4 @@
 <img width="1880" height="1050" alt="Image" src="https://github.com/user-attachments/assets/51af5474-4687-42f9-a56c-6c4ca11740c9" />
 
 ## api 명세서
+[api 명세서.pdf](https://github.com/user-attachments/files/22994852/api.pdf)
