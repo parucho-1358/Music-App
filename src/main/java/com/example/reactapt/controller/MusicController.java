@@ -21,7 +21,7 @@ public class MusicController {
     private final MusicService svc;
     public MusicController(MusicService svc) { this.svc = svc; }
 
-    // src/main/java/com/example/reactapt/controller/MusicController.java
+    // 임시 엔드포인트
 //    @GetMapping(value = "/charts/trending", produces = "application/json")
 //    public Mono<ResponseEntity<String>> trendingDummy(
 //            @RequestParam(defaultValue = "all-music") String genre,
@@ -36,7 +36,7 @@ public class MusicController {
 //    }
 
 
-    // 나중에 실제 서비스로 되돌릴 "진짜" 엔드포인트(임시로 주석 처리해두세요)
+    //  서비스로 되돌릴 "진짜" 엔드포인트
 
     @GetMapping("/charts/trending")
     public ScPaging<ScChartItem> trendingReal(

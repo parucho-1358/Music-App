@@ -54,7 +54,6 @@ public class ScClient {
         if (!qp.containsKey("app_locale"))          b.queryParam("app_locale", "en");
         if (!qp.containsKey("app_version"))         b.queryParam("app_version", "1760349581");
 
-        // ❗ Spring 6+에선 불필요한 encode를 피하는 편이 “이중 인코딩” 방지에 안전
         var url = b.build(true).toUriString();
         System.out.println("[SC GET] " + url);
 
