@@ -31,7 +31,7 @@ YouTube Data API 를 사용하여 실시간 인기 동영상을 보여줌
 Header , Footer , SideBar를 고정시킴 - Header 부분의 search(검색창)는 다른 페이지를 들어가도 항상 보이게설정 (항상 접근 가능)
                                     - footer 부분의 PlayerBar(재생바)                    ''
                                     - SideBar 부분의  PlayList(플레이 리스트)             ''        - Library page로 연결되어 상세 트랙을 볼 수 있음
-                                      ㄴ   
+                                         
 
 ### Discover
 SoundCloud API를 받아와 실기간 인기차트를 불러옴
