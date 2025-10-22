@@ -107,7 +107,7 @@ npm run dev
 
 <h2>주요 흐름</h2>
 ---
-<h3>1.Home</h3>
+<h3> 1.Home </h3>
 <pre><code>
 사용자 진입 - SC 트렌딩 호출 + YT 인기(음악) 호출 - 응답 정규화(MediaItem)·카드 렌더 - 카드 클릭 -  재생(SC 위젯 / YT iframe) 또는 플리에 추가(로컬)
 </code></pre>
@@ -133,14 +133,14 @@ npm run dev
     * 상단 검색창을 통해 입력된 키워드로 YouTube 및 SoundCloud 데이터를 통합 검색합니다.
 ---
 
-<h3>2.Discover</h3>
+<h3> 2.Discover </h3>
 <pre><code>
 탐색 탭 전환- SC 장르 트렌딩 호출과 정규화·Row 무한 스크롤 렌더
 </code></pre>
 
 ---
 
-<h3>3.Search</h3>
+<h3> 3.Search </h3>
 <pre><code>
 사용자 입력 -(GET) YouTube + SoundCloud API - 결과 - UI - 재생/추가
 </code></pre>
@@ -168,15 +168,15 @@ npm run dev
 * **재생 및 플레이리스트 추가**:
     * **즉시 재생**: 아이템 클릭 시 `useNowPlayingStore.playTrack(item, results)`를 호출, 현재 검색 결과(`results`)를 통째로 재생 목록 큐로 설정.
     * **플리 추가**: `usePlaylistStore`의 액션을 호출하며, 상태 업데이트 시 **함수형 업데이트**를 사용해 이전 상태(prev)를 기반으로 안전하게 새 항목을 추가.
+ 
+---
 
-<h3>Board</h3>
+<h3> 4.Board </h3>
 <pre><code>
 로컬 데이터 로드(LocalStorage/IndexedDB) - 목록 렌더(제목만) - 입력(제목≤20 필수·내용≤200 선택, Enter 제출) - 등록 성공 시 상단 추가+자동 펼침/알림 - 수정(펼친 상태 폼 전환)·삭제(대상만 제거) - 자동증가 ID 부여 - 즉시 화면/로컬 동기화
 </code></pre>
 
 ### 구현상세 : 
-#### 사용 기술
-* **코드 스플리팅**: `React.lazy` 및 `<Suspense />`
 
 #### 1. 성능 최적화 (Code Splitting)
 * 이 게시판 컴포넌트는 사용자가 해당 기능 페이지에 진입할 때까지 로드되지 않습니다.
@@ -203,15 +203,10 @@ npm run dev
     * 각 게시글은 `auto-increment` 방식을 통해 고유한 `id`를 부여받아 관리됩니다.
 
 
-<h3>Library</h3>
+<h3> 5.Library </h3>
 <pre><code>
 플리 목록 로드(LocalStorage 복원) - 플리 생성/이름변경/삭제, 트랙 추가/제거/정렬 -  변경 즉시 LocalStorage 저장 - 항목 클릭 - 재생
 </code></pre>
-
-#### 사용 기술
-* **Frontend**: React
-* **Zustand (전역 상태 관리)**
-* **데이터 영속성**: Zustand `persist` 미들웨어 (LocalStorage 연동)
 
 #### 1. 데이터 영속성 (Persistence)
 * 사용자가 생성/수정한 모든 플레이리스트 데이터는 브라우저가 종료되어도 유지되어야 합니다.
